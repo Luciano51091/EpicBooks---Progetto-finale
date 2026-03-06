@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
+import AddComment from "./AddComment";
+import CommentList from "./CommentList";
 
 function CommentArea({ asin }) {
   const [comments, setComments] = useState([]);
@@ -15,11 +18,8 @@ function CommentArea({ asin }) {
           },
         });
 
-        if (response.ok) {
-          const data = await response.json;
-        } else {
-          alert("Errore nel recupero dei commenti");
-        }
+        const data = await response.json();
+        setComments(data);
       } catch (error) {
         console.error(error);
       } finally {
@@ -30,7 +30,13 @@ function CommentArea({ asin }) {
     getComments();
   }, [asin]);
 
-  return <div>CommentArea</div>;
+  return (
+    <div className="mt-3">
+      {isLoading && <Spinner animation="border" variant="primary" />}
+      <CommentList comments={comments} />
+      <AddComment asin={asin} />
+    </div>
+  );
 }
 
 export default CommentArea;

@@ -1,7 +1,7 @@
 import React from "react";
 import { ListGroupItem } from "react-bootstrap";
 
-function SingleComment() {
+function SingleComment({ comment }) {
   return (
     <ListGroupItem>
       <strong>{comment.author}</strong>: {comment.comment}
