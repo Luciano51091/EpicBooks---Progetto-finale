@@ -10,7 +10,7 @@ function MyNav({ searchQuery, setSearchQuery }) {
     <Navbar bg={theme} variant={theme} expand="lg" className="shadow-sm sticky-top">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          Epibooks
+          Epicbooks
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
