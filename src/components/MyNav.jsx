@@ -29,17 +29,20 @@ function MyNav({ searchQuery, setSearchQuery }) {
             />
 
             <Button
-              variant={theme === "light" ? "outline-dark" : "outline-light"}
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              className="d-flex align-items-center justify-content-center p-0"
+              className="d-flex align-items-center justify-content-center p-0 border"
               style={{
                 width: "40px",
                 height: "40px",
                 borderRadius: "50%",
                 fontSize: "1.2rem",
+                backgroundColor: "transparent",
+                color: theme === "light" ? "#212529" : "#f8f9fa",
+                borderColor: theme === "light" ? "#212529" : "#f8f9fa",
+                boxShadow: "none",
               }}
             >
-              {theme === "light" ? <i className="bi bi-moon-fill text-dark"></i> : <i className="bi bi-sun-fill text-white"></i>}
+              {theme === "light" ? <i className="bi bi-moon-fill"></i> : <i className="bi bi-sun-fill"></i>}
             </Button>
           </div>
         </Navbar.Collapse>
