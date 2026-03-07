@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
-function AddComment({ asin }) {
+function AddComment({ asin, getComments }) {
   const [newComment, setNewComment] = useState({
     comment: "",
     rate: "1",
@@ -23,6 +23,7 @@ function AddComment({ asin }) {
       });
 
       if (response.ok) {
+        getComments();
         alert("Recensione inviata!");
         setNewComment({
           comment: "",
