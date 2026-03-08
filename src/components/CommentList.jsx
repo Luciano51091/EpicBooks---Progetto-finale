@@ -4,7 +4,8 @@ import SingleComment from "./SingleComment";
 
 function CommentList({ comments, getComments }) {
   return (
-    <ListGroup>
+    <ListGroup data-testid="single-comment">
+      <h6 className="small border fw-bold">Recensioni:</h6>
       {comments.map((comment) => (
         <SingleComment key={comment._id} comment={comment} getComments={getComments} />
       ))}

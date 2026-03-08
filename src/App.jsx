@@ -23,6 +23,7 @@ function App() {
             <Route path="/details/:asin" element={<BookDetails />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <Welcome />
           <MyFooter />
         </div>
       </ThemeContext.Provider>

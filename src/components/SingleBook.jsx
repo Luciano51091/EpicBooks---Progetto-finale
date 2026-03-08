@@ -7,7 +7,7 @@ function SingleBook({ book, selectedAsin, setSelectedAsin }) {
 
   return (
     <>
-      <Card onClick={() => setSelectedAsin(book.asin)} style={{ border: isSelected ? "3px solid red" : "1px solid #dee2e6" }}>
+      <Card onClick={() => setSelectedAsin(book.asin)} style={{ border: isSelected ? "3px solid red" : "1px solid #dee2e6" }} data-testid="book-card">
         <Card.Img variant="top" src={book.img} />
         <Card.Body className="d-flex flex-column">
           <Card.Title>{book.title}</Card.Title>

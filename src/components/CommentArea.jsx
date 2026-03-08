@@ -45,7 +45,7 @@ function CommentArea({ asin }) {
 
   return (
     <div className="mt-3 p-2 bg-light rounded" style={{ maxHeight: "500px", overflow: "auto" }}>
-      <h6 className="small fw-bold">Recensioni:</h6>
+      {/* <h6 className="small border fw-bold">Recensioni:</h6> */}
       {isLoading && <Spinner animation="border" variant="primary" size="sm" />}
       <CommentList comments={comments} getComments={getComments} />
       <hr />

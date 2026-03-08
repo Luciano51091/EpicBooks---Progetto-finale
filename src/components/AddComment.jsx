@@ -15,8 +15,8 @@ function AddComment({ asin, getComments }) {
       const response = await fetch(`https://striveschool-api.herokuapp.com/api/books/${asin}/comments/`, {
         method: "POST",
         body: JSON.stringify({
-          comment: text,
-          rate: rating,
+          comment: "",
+          rate: "",
           elementId: asin,
         }),
         headers: {
