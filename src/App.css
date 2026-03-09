@@ -1,17 +1,113 @@
-.book-card {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  cursor: pointer;
+/* RESET E SFONDO */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5 !important; /* Il tuo grigio */
 }
 
-.book-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+/* La classe del tema deve solo gestire il colore, non l'altezza forzata */
+.bg-custom-light {
+  background-color: #f0f2f5 !important;
+  color: #212529;
+  width: 100%;
+}
+
+/* Assicuriamoci che le immagini dei libri non siano giganti */
+.book-card img {
+  height: 350px;
+  object-fit: cover;
+}
+
+/* Fix per titoli e card */
+.book-card {
+  background-color: white !important;
+  border: none !important;
+  margin-bottom: 20px;
 }
 
 .card-title {
-  font-size: 0.5rem;
-  height: 1.5rem;
+  font-size: 0.85rem !important;
+  height: 2.5rem;
   overflow: hidden;
+}
+
+/* Rimpicciolisce i bottoni e i testi dentro l'area commenti laterale */
+.comments-wrapper button {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.75rem !important;
+}
+
+.comments-wrapper input,
+.comments-wrapper select {
+  font-size: 0.85rem !important;
+}
+
+/* Evita che la lista dei commenti abbia margini strani */
+.comments-wrapper .list-group {
+  margin-bottom: 0 !important;
+}
+
+.welcome-alert {
+  background-color: #c7d3b5 !important; /* Bianca per risaltare sul grigio */
+  border-left: 5px solid #6f7f5b !important; /* Una linea colorata a sinistra per dare carattere */
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Sistemiamo il tasto di chiusura (la X) */
+.welcome-alert .btn-close {
+  padding: 1.25rem !important;
+  font-size: 0.7rem;
+}
+
+/* Effetto per il tema Dark */
+.bg-dark .welcome-alert {
+  background-color: #d4d2d2 !important;
+  border-left-color: #4a6fa5 !important;
+}
+.bg-dark .welcome-alert h4,
+.bg-dark .welcome-alert p {
+  color: #000000 !important;
+}
+
+/* Effetto per il tema Dark (Variante più morbida) */
+.bg-dark .welcome-alert {
+  background-color: #3e4d35 !important; /* Un verde salvia molto scuro/bosco */
+  border-left-color: #c7d3b5 !important; /* Il bordo diventa la parte chiara */
+  color: #f8f9fa !important; /* Testo chiaro su fondo scuro */
+}
+
+.bg-dark .welcome-alert p,
+.bg-dark .welcome-alert .alert-heading {
+  color: #f8f9fa !important;
+}
+
+/* Rende la "X" di chiusura bianca nel tema dark */
+.bg-dark .welcome-alert .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* SFONDO UNIVERSALE (HOME + DETTAGLI) */
+.main-wrapper {
+  /* Usiamo il tuo grigio di base con un leggerissimo pattern a puntini */
+  background-color: #93a996 !important;
+  background-image: radial-gradient(#d1d1d1 0.5px, transparent 0.5px) !important;
+  background-size: 20px 20px !important;
+  min-height: 100vh;
+  width: 100%;
+  transition: background-color 0.3s ease; /* Per una transizione fluida col tema dark */
+}
+
+/* Quando il tema è DARK, cambiamo i colori dello sfondo universale */
+.bg-dark.main-wrapper {
+  background-color: #212529 !important;
+  background-image: radial-gradient(#343a40 0.5px, transparent 0.5px) !important;
+}
+
+/* Rimuovi pure .home-background se non ti serve più averlo diverso */
+
+/* IMPORTANTE: Dobbiamo assicurarci che il div padre in App non blocchi questo colore */
+.bg-custom-light:has(.home-background) {
+  background-color: transparent !important;
 }

@@ -4,12 +4,14 @@ import SingleComment from "./SingleComment";
 
 function CommentList({ comments, getComments }) {
   return (
-    <ListGroup data-testid="single-comment">
-      <h6 className="small border fw-bold">Recensioni:</h6>
-      {comments.map((comment) => (
-        <SingleComment key={comment._id} comment={comment} getComments={getComments} />
-      ))}
-    </ListGroup>
+    <div className="comment-list">
+      <ListGroup data-testid="single-comment">
+        <h6 className="small fw-bold">Recensioni:</h6>
+        {comments.map((comment) => (
+          <SingleComment key={comment._id} comment={comment} getComments={getComments} />
+        ))}
+      </ListGroup>
+    </div>
   );
 }
 

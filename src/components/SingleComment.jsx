@@ -52,7 +52,7 @@ function SingleComment({ comment, getComments }) {
   };
 
   return (
-    <ListGroupItem className="border-0 border-bottom" data-testid="single-comment">
+    <ListGroupItem className="border-0 border-bottom comment-list " data-testid="single-comment">
       <div className="d-flex flex-column">
         <div className="mb-2">
           <small className="fw-bold">{comment.author}:</small>

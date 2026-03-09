@@ -7,7 +7,7 @@ function MyNav({ searchQuery, setSearchQuery }) {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
-    <Navbar bg={theme} variant={theme} expand="lg" className="shadow-sm sticky-top">
+    <Navbar expand="lg" className={`shadow-sm sticky-top ${theme === "light" ? "bg-custom-light" : "bg-dark"}`} variant={theme}>
       <Container>
         <Navbar.Brand as={Link} to="/">
           Epicbooks

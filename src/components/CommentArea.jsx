@@ -29,10 +29,8 @@ function CommentArea({ asin }) {
     }
   };
 
-  // 2. Lo useEffect si occupa solo di far partire la fetch quando l'asin cambia
   useEffect(() => {
     getComments();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [asin]);
 
   if (!asin) {
@@ -44,8 +42,7 @@ function CommentArea({ asin }) {
   }
 
   return (
-    <div className="mt-3 p-2 bg-light rounded" style={{ maxHeight: "500px", overflow: "auto" }}>
-      {/* <h6 className="small border fw-bold">Recensioni:</h6> */}
+    <div className="comment-area mt-3 p-2 bg-light rounded" style={{ maxHeight: "500px", overflow: "auto" }}>
       {isLoading && <Spinner animation="border" variant="primary" size="sm" />}
       <CommentList comments={comments} getComments={getComments} />
       <hr />
