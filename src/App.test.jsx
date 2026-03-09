@@ -45,20 +45,22 @@ describe("testApp", () => {
     const allCards = screen.getAllByTestId("book-card");
     const firstCard = allCards[0];
     fireEvent.click(firstCard);
-    expect(firstCard).toHaveStyle("border: 3px solid red");
+
+    expect(firstCard).toHaveClass("selected-book");
   });
 
   it("verifica che cliccando su un secondo libro il bordo del primo torni normale", () => {
     render(<App />);
-
     const allCards = screen.getAllByTestId("book-card");
     const firstCard = allCards[0];
     const secondCard = allCards[1];
+
     fireEvent.click(firstCard);
-    expect(firstCard).toHaveStyle("border: 3px solid red");
+    expect(firstCard).toHaveClass("selected-book");
+
     fireEvent.click(secondCard);
-    expect(secondCard).toHaveStyle("border: 3px solid red");
-    expect(firstCard).not.toHaveStyle("border: 3px solid red");
+    expect(secondCard).toHaveClass("selected-book");
+    expect(firstCard).not.toHaveClass("selected-book");
   });
 
   it("verifica che all'avvio non ci siano commenti visualizzati", () => {

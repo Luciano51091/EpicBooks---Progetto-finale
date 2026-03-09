@@ -9,7 +9,7 @@ function SingleBook({ book, selectedAsin, setSelectedAsin }) {
     <>
       <Card
         onClick={() => setSelectedAsin(book.asin)}
-        className={`h-100 book-card shadow-sm`}
+        className={`h-100 book-card ${isSelected ? "selected-book" : ""}`}
         style={{
           border: isSelected ? "3px solid red !important" : "1px solid #dee2e6 !important",
           boxShadow: isSelected ? "0 0 15px rgba(255, 0, 0, 0.3)" : "none",
