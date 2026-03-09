@@ -7,12 +7,7 @@ const Welcome = () => {
   if (show) {
     return (
       <Container className="mt-4">
-        <Alert
-          variant="light" // Usiamo light per una base neutra
-          onClose={() => setShow(false)}
-          dismissible
-          className="welcome-alert shadow-sm border-0"
-        >
+        <Alert variant="light" onClose={() => setShow(false)} dismissible className="welcome-alert shadow-sm border-0">
           <div className="d-flex align-items-center">
             <div className="me-3 fs-3"></div>
             <div>

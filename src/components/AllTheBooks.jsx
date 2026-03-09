@@ -17,7 +17,7 @@ function AllTheBooks({ searchQuery }) {
         <Col lg={9}>
           <Row className="g-3">
             {filteredBooks.map((book) => (
-              <Col xs={12} sm={6} md={4} lg={3} key={book.asin}>
+              <Col xs={12} sm={6} md={4} lg={3} key={book.asin} className="mb-4 d-flex align-items-stretch">
                 <SingleBook book={book} selectedAsin={selectedAsin} setSelectedAsin={setSelectedAsin} />
               </Col>
             ))}
